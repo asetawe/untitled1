@@ -1,0 +1,8 @@
+name: untitled
+version: '${version}'
+main: me.intier.untitled.Untitled
+api-version: '1.20'
+commands:
+  menu:
+    description: Opens the menu.
+    usage: /menu
