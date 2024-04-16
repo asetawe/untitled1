@@ -51,6 +51,7 @@ public class MenuCommand implements CommandExecutor {
             lore.add(ChatColor.GRAY + "저항력: " + ChatColor.DARK_GRAY + stats.getResistance());
             lore.add(ChatColor.GRAY + "회심 확률: " + ChatColor.BLUE + stats.getFinalCriticalChance() * 100 + "%");
             lore.add(ChatColor.GRAY + "회심 배율: " + ChatColor.BLUE + stats.getFinalCriticalDamage() * 100 + "%");
+            lore.add(ChatColor.DARK_GRAY + "눌러서 능력치 상세 정보로 이동 >>");
 
             statsMeta.setLore(lore);
             statsItem.setItemMeta(statsMeta);

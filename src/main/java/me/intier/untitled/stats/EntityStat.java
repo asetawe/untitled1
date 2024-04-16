@@ -1,6 +1,6 @@
 package me.intier.untitled.stats;
 
-import java.util.Random;
+import org.bukkit.entity.Entity;
 
 public class EntityStat {
 
@@ -272,33 +272,5 @@ public class EntityStat {
         return this.physicalResistance;
     }
 
-    private Random random = new Random();
-    private boolean isCriticalHit() {
-        return random.nextDouble() < getFinalCriticalChance();
-    }
-    public double calculateAttributeDamage(double attributeBonus) {
-        double baseDamage = getFinalDamage();
-        double damageWithAttribute = baseDamage * attributeBonus;
 
-        if (isCriticalHit()) {
-            damageWithAttribute *= getFinalCriticalDamage();
-        }
-
-        return damageWithAttribute;
-    }
-    public double fireAttackCalculation() {
-        return calculateAttributeDamage(getFireDamageBonus());
-    }
-    public double waterAttackCalculation() {
-        return calculateAttributeDamage(getWaterDamageBonus());
-    }
-    public double iceAttackCalculation() {
-        return calculateAttributeDamage(getIceDamageBonus());
-    }
-    public double dragonAttackCalculation() {
-        return calculateAttributeDamage(getDragonDamageBonus());
-    }
-    public double physicalAttackCalculation() {
-        return calculateAttributeDamage(getPhysicalDamageBonus());
-    }
 }

@@ -2,6 +2,8 @@ package me.intier.untitled;
 
 import me.intier.untitled.commands.MenuCommand;
 import me.intier.untitled.commands.MenuCommandInventoryListener;
+import me.intier.untitled.mobs.PigSpawnListener;
+import me.intier.untitled.stats.AttackListener;
 import me.intier.untitled.stats.EntityStatsManager;
 import me.intier.untitled.system.MenuInteractionListener;
 import me.intier.untitled.system.PlayerJoinListener;
@@ -21,6 +23,8 @@ public final class Untitled extends JavaPlugin {
 
         new PlayerStatsDisplay(this, this.entityStatsManager);
 
+
+
         //
         this.getCommand("menu").setExecutor(new MenuCommand(this));
 
@@ -29,6 +33,8 @@ public final class Untitled extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MenuInteractionListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
+        getServer().getPluginManager().registerEvents(new AttackListener(this), this);
+        getServer().getPluginManager().registerEvents(new PigSpawnListener(this), this);
 
     }
 
